@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-
+''' this is a script which copies recursively files from one folder to another,
+ including sub-dirs'''
 import shutil
 import sys
 import os
