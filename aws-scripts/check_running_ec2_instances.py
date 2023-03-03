@@ -8,6 +8,7 @@ instance with an IAM role, boto3 can retrieve the credentials automatically
 """
 
 import boto3
+import argparse
 
 def check_ec2_states_all_regions():
 
@@ -32,4 +33,6 @@ def check_ec2_states_all_regions():
           print("Instance ID:", i.id)
           print('State:', i.state['Name'])
 
-  return regions
+check_ec2_states_all_regions()
+
+
