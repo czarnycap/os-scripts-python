@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+#TODO
+# make script working ;)
+
 import os
 import requests
 import json
