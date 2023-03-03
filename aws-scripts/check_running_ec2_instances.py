@@ -71,32 +71,18 @@ def check_nat_gateways():
 def main():
     # Create an argument parser
     parser = argparse.ArgumentParser(description="Check AWS account services status")
-
-    # Add an optional argument to check EC2 instances
-    parser.add_argument(
-        "--ec2-instances",
-        action="store_true",
-        help="Check for EC2 instances across regions",
-    )
-
-    # Add an optional argument to check S3 buckets
-    parser.add_argument(
-        "--s3-list",
-        action="store_true",
-        help="Check for S3 buckets",
-    )    
-    
-    # Check for NAT gateways
-    parser.add_argument(
-        "--nat-gateways",
-        action="store_true",
-        help="Check for NAT gateways",
-    )
+    parser.add_argument("--ec2-instances", action="store_true", help="Check for EC2 instances across regions")
+    parser.add_argument("--s3-list", action="store_true", help="Check for S3 buckets")
+    parser.add_argument("--nat-gateways", action="store_true", help="Check for NAT gateways" )
 
 
 
     # Parse the command-line arguments
     args = parser.parse_args()
+
+    # Check if no arguments were provided
+    if not any(vars(args).values()):
+        parser.print_help()    
 
     # Parse args
     if args.ec2_instances:
