@@ -9,9 +9,11 @@ instance with an IAM role, boto3 can retrieve the credentials automatically
 
 """
 
-import boto3
 import argparse
+import boto3
 
+
+# function showing all ec2 instances
 def check_ec2_states_all_regions():
 
   # initialize ec2 client 
@@ -36,7 +38,7 @@ def check_ec2_states_all_regions():
           print('State:', i.state['Name'])
 
 
-if __name__ == '__main__':
+def main():
     # Create an argument parser
     parser = argparse.ArgumentParser(description="Check AWS account services status")
 
@@ -50,3 +52,7 @@ if __name__ == '__main__':
     if args.ec2_instances:
         print("Running EC2 instances:")
         check_ec2_states_all_regions()
+
+
+if __name__ == '__main__':
+    main()
