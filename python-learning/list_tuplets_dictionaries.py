@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+import pl_postal_codes
 # required for get_functions function
 import inspect
 
@@ -50,8 +50,10 @@ def if_condition(a,b):
         print(a,"<",b)
     else:
         print(a,"=",b)
+    
 
 # list functions from a current modeule
+# TODO fix as it doesn't work yet
 def get_functions():
     functions = []
     for name, obj in inspect.getmembers(inspect.stack()[1][0]):
@@ -60,9 +62,14 @@ def get_functions():
     return(functions)
 
 
-# function execution
-
+''' 
+function execution
+'''
+pl_postal_codes.run_forrest("start")
 # if_condition(var_a,var_b)
 # play_dict(filled_dictionary)
-aaa = get_functions
-print(aaa)
+
+#TOdo
+# list_of_functions = get_functions()
+# for i in list_of_functions:
+#     print(i)
